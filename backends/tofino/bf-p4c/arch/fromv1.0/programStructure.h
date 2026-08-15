@@ -332,6 +332,10 @@ class ConvertMetadata : public Transform {
             mkMember("ig_intr_md_for_dprsr"_cs, "mirror_deflect_on_drop"_cs, 1));
         cvt(INGRESS, "ig_intr_md_for_mb.mirror_egress_port"_cs, portWidth,
             mkMember("ig_intr_md_for_dprsr"_cs, "mirror_egress_port"_cs, portWidth));
+        cvt(INGRESS, "ig_intr_md_for_mb.mirror_qid"_cs, 7,
+            mkMember("ig_intr_md_for_dprsr"_cs, "mirror_qid"_cs, 7));
+        cvt(INGRESS, "ig_intr_md_for_mb.mirror_coalesce_length"_cs, 8,
+            mkMember("ig_intr_md_for_dprsr"_cs, "mirror_coalesce_length"_cs, 8));
         cvt(INGRESS, "standard_metadata.ingress_port"_cs, 9,
             mkMember("ig_intr_md"_cs, "ingress_port"_cs, portWidth));
 
@@ -360,6 +364,10 @@ class ConvertMetadata : public Transform {
             mkMember("eg_intr_md_for_dprsr"_cs, "mirror_deflect_on_drop"_cs, 1));
         cvt(EGRESS, "eg_intr_md_for_mb.mirror_egress_port"_cs, portWidth,
             mkMember("eg_intr_md_for_dprsr"_cs, "mirror_egress_port"_cs, portWidth));
+        cvt(EGRESS, "eg_intr_md_for_mb.mirror_qid"_cs, 7,
+            mkMember("eg_intr_md_for_dprsr"_cs, "mirror_qid"_cs, 7));
+        cvt(EGRESS, "eg_intr_md_for_mb.mirror_coalesce_length"_cs, 8,
+            mkMember("eg_intr_md_for_dprsr"_cs, "mirror_coalesce_length"_cs, 8));
         cvt(EGRESS, "meta.standard_metadata.ingress_port"_cs, 9,
             mkMember("meta"_cs, "ig_intr_md"_cs, "ingress_port"_cs, portWidth));
         cvt(EGRESS, "standard_metadata.ingress_port"_cs, 9,
